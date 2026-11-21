@@ -1,4 +1,8 @@
+"""Night ferry relaxation entry writer."""
+
 from pathlib import Path
+
+OUT = Path('/output')
 
 ENTRY = ('The night ferry runs late. '
     'You sit on the deck with your coat folded behind you, '
@@ -7,9 +11,8 @@ ENTRY = ('The night ferry runs late. '
     'You finish your coffee. The lights come closer.')
 
 def write_entry():
-    out = Path('/output')
-    out.mkdir(parents=True, exist_ok=True)
-    (out / 'entry.txt').write_text(ENTRY, encoding='utf-8')
+    OUT.mkdir(parents=True, exist_ok=True)
+    (OUT / 'entry.txt').write_text(ENTRY, encoding='utf-8')  # Write entry to output file
     print(ENTRY)
 
 if __name__ == '__main__':
